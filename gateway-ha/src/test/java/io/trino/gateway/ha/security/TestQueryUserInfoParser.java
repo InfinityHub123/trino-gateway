@@ -175,11 +175,6 @@ final class TestQueryUserInfoParser
         return createFilter(requestAnalyzerConfig, clientCertificateBridgeEnabled);
     }
 
-    private static QueryUserInfoParser createFilter(RequestAnalyzerConfig requestAnalyzerConfig)
-    {
-        return createFilter(requestAnalyzerConfig, false);
-    }
-
     private static QueryUserInfoParser createFilter(RequestAnalyzerConfig requestAnalyzerConfig, boolean clientCertificateBridgeEnabled)
     {
         HaGatewayConfiguration config = new HaGatewayConfiguration();
