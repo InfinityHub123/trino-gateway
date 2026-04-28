@@ -181,7 +181,7 @@ final class TestRouteToBackendResource
         return (T) Proxy.newProxyInstance(
                 TestRouteToBackendResource.class.getClassLoader(),
                 new Class<?>[] {type},
-                (proxy, method, args) -> defaultValue(method.getReturnType()));
+                (_, method, _) -> defaultValue(method.getReturnType()));
     }
 
     private static Object defaultValue(Class<?> type)
@@ -252,7 +252,7 @@ final class TestRouteToBackendResource
         {
             super(
                     unsupportedInterface(RoutingManager.class),
-                    (RoutingGroupSelector) request -> null,
+                    (RoutingGroupSelector) _ -> null,
                     new HaGatewayConfiguration());
             this.destination = destination;
         }

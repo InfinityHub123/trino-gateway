@@ -92,7 +92,7 @@ public class TestingHttpServletRequest
         return (HttpServletRequest) Proxy.newProxyInstance(
                 TestingHttpServletRequest.class.getClassLoader(),
                 new Class<?>[] {HttpServletRequest.class},
-                (proxy, method, args) -> defaultValue(method.getReturnType()));
+                (_, method, _) -> defaultValue(method.getReturnType()));
     }
 
     private static Object defaultValue(Class<?> type)
